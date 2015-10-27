@@ -25,6 +25,7 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.annotation.StringRes;
 
 /**
  * 自定义Toast,配合TabBar使用效果更加
@@ -90,6 +91,14 @@ public class TabToast {
 
     public static void makeText(Context context, String text) {
         makeText(context, text, Toast.LENGTH_SHORT);
+    }
+
+    public static void makeText(Context context, @StringRes int resId) {
+        makeText(context, context.getString(resId));
+    }
+
+    public static void makeText(Context context, @StringRes int resId, int duration) {
+        makeText(context, context.getString(resId), duration);
     }
 
     public static void makeText(Context context, String text, int duration) {
